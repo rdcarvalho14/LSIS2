@@ -1,0 +1,172 @@
+.calculator {
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background);
+}
+
+.calculator-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mode-toggle {
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.memory-indicator {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-divider);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-medium);
+}
+.memory-indicator.on {
+  background: var(--color-info);
+  color: #fff;
+}
+
+.calculator-display {
+  flex: 1;
+  min-height: 0;
+  background: var(--color-surface);
+  color: #000;
+  padding: 28px 20px;
+  text-align: right;
+  font-size: 42px;
+  font-weight: 300;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.calculator-buttons {
+  display: grid;
+  gap: 8px;
+  background: var(--color-background);
+  padding: 12px;
+}
+
+.scientific-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.calculator-buttons button {
+  aspect-ratio: 1;
+  border: none;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform var(--transition-fast) var(--transition-ease), background-color var(--transition-fast) var(--transition-ease);
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: var(--shadow-sm);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.calculator-buttons button:active {
+  transform: scale(0.98);
+}
+
+.btn-number {
+  background: var(--color-surface);
+}
+
+.btn-operator {
+  background: #f3f4f6;
+  color: var(--color-text-primary);
+}
+
+.btn-function {
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+.btn-equals {
+  background: var(--color-success);
+  color: white;
+  font-weight: 600;
+}
+
+.btn-zero {
+  grid-column: span 2;
+}
+
+.btn-spacer {
+  visibility: hidden;
+}
+
+.disabled {
+  opacity: 0.3;
+  cursor: default !important;
+  pointer-events: none;
+}
+
+.calculator-hint {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 414px) {
+  .calculator-display {
+    font-size: 48px;
+    padding: 24px 16px;
+  }
+  
+  .calculator-buttons {
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .calculator-buttons button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .calculator-display {
+    font-size: 42px;
+    padding: 20px 16px;
+  }
+  
+  .calculator-buttons {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .calculator-buttons button {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) {
+  .calculator {
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-lg);
+  }
+}

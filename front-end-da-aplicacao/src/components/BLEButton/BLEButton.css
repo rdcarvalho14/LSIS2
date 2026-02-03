@@ -1,0 +1,114 @@
+.ble-button-container {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.ble-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.ble-indicator {
+  font-size: 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.ble-indicator.connected {
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.ble-status-text {
+  font-weight: 600;
+  color: #333;
+}
+
+.ble-error {
+  background: #fee;
+  color: #c33;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border-left: 4px solid #c33;
+}
+
+.ble-connect-btn,
+.ble-disconnect-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.ble-connect-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.ble-connect-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.ble-connect-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ble-disconnect-btn {
+  background: #e74c3c;
+  color: white;
+}
+
+.ble-disconnect-btn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+.ble-info {
+  background: #f0f7ff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #555;
+  border-left: 4px solid #667eea;
+}
+
+.ble-info strong {
+  color: #333;
+}
+
+.ble-info ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.ble-info ol li {
+  margin: 5px 0;
+}
+
+.ble-note {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+}

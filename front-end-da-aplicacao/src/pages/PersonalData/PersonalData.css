@@ -1,0 +1,223 @@
+.personal-data-container {
+  min-height: 100vh;
+  background: 
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%),
+    linear-gradient(135deg, #FFCACA 0%, #FFD5D5 25%, #FFE8E8 50%, #FFD5D5 75%, #FFCACA 100%);
+  padding: 20px;
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.personal-data-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 350px;
+  background-image: url("data:image/svg+xml,%3Csvg width='1440' height='350' viewBox='0 0 1440 350' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,100 Q360,40 720,100 T1440,100 L1440,0 L0,0 Z' fill='%23FFB8B8' fill-opacity='0.4'/%3E%3Cpath d='M0,180 Q360,120 720,180 T1440,180 L1440,0 L0,0 Z' fill='%23FFCACA' fill-opacity='0.5'/%3E%3Cpath d='M0,260 Q360,200 720,260 T1440,260 L1440,0 L0,0 Z' fill='%23FFD5D5' fill-opacity='0.6'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* HEADER */
+.personal-data-header {
+  padding: 20px 0 24px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.personal-data-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #FF4C4C;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.personal-data-header .subtitle {
+  font-size: 14px;
+  color: #2D3436;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #2D3436 !important;
+  cursor: pointer;
+  padding: 8px 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* FORMULÁRIO */
+.personal-data-form {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+  z-index: 1;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group:last-of-type {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2D3436;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #FFFFFF;
+  color: #2D3436;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #FF4C4C;
+  background: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.5;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #7a869a;
+  opacity: 1;
+}
+
+/* RADIO BUTTONS */
+.radio-group {
+  display: flex;
+  gap: 12px;
+}
+
+.radio-option {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 16px;
+  background: #F8F9FA;
+  border: 2px solid #E5E7EB;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.radio-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-option .radio-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2D3436;
+  z-index: 1;
+}
+
+.radio-option .radio-indicator {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #E5E7EB;
+  border-radius: 50%;
+  background: white;
+  left: 12px;
+  transition: all 0.2s;
+}
+
+.radio-option .radio-indicator::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #FF4C4C;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-indicator {
+  border-color: #FF4C4C;
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-indicator::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-option input[type="radio"]:checked ~ .radio-label {
+  color: #FF4C4C;
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+  background: #FFF0F0;
+  border-color: #FF4C4C;
+}
+
+/* BOTÃO SALVAR */
+.btn-save {
+  width: 100%;
+  padding: 16px;
+  background: #FF4C4C;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(255, 76, 76, 0.25);
+  margin-top: 8px;
+}
+
+.btn-save:active {
+  background: #E03E3E;
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(255, 76, 76, 0.3);
+}
+
+/* RESPONSIVE */
+@media (min-width: 769px) {
+  .personal-data-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
